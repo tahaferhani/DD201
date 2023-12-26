@@ -1,38 +1,29 @@
-import React from 'react';
 import './App.css';
 import Home from './pages/Home';
 import About from './pages/About';
 import Products from './pages/Products';
-import { BrowserRouter, NavLink, Route, Routes } from 'react-router-dom';
-import Product from './pages/Product';
+import { BrowserRouter, Link, NavLink, Route, Routes } from 'react-router-dom';
 
 function App() {
-  return (
-    <>
-      <BrowserRouter>
+  return <BrowserRouter>
         <nav>
-          <ul>
-            <li>
-              <NavLink to="/">Home page</NavLink>
-            </li>
-            <li>
-              <NavLink to="/about">About page</NavLink>
-            </li>
-            <li>
-              <NavLink to="/products">Products page</NavLink>
-            </li>
-          </ul>
+          <NavLink to='/'>Home</NavLink><br/>
+          <NavLink to='/about'>About</NavLink><br/>
+          <NavLink to='/products'>Products</NavLink><br/>
         </nav>
 
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/products" element={<Products />} />
-          <Route path="/product/:id" element={<Product />} />
+          <Route path='/' element={<Home/>} />
+          <Route path='/about' element={<About/>} />
+          <Route path='/products' element={<Products/>} />
         </Routes>
+
+        <nav>
+          <NavLink to='/'>Home</NavLink><br/>
+          <NavLink to='/about'>About</NavLink><br/>
+          <NavLink to='/products'>Products</NavLink><br/>
+        </nav>
       </BrowserRouter>
-    </>
-  );
 }
 
 export default App;

@@ -8,6 +8,22 @@ export default function Products() {
     const getProducts = async () => {
       const resp = await axios.get("https://dummyjson.com/products");
       setProducts(resp.data.products);
+
+      // const resp = await fetch("https://dummyjson.com/products");
+      // const data = await resp.json();
+      // console.log(data);
+
+      // fetch("https://dummyjson.com/products").then(resp => {
+      //   resp.json().then(data => {
+      //     console.log(data);
+      //   })
+      // })
+
+      // fetch("https://dummyjson.com/products")
+      //   .then(resp => resp.json())
+      //   .then(data => {
+      //     console.log(data);
+      //   })
     }
 
     useEffect(() => {
