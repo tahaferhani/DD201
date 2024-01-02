@@ -1,9 +1,4 @@
 const TaskItem = ({task, updateTask}) => {
-    const onCheckboxChange = (e) => {
-        const id = e.target.id;
-        updateTask(id);
-    }
-
     return <tr style={{ backgroundColor: task.complet ? "green" : "red" }}>
         <td>{task.id}</td>
         <td>{task.texte}</td>

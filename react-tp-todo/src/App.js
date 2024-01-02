@@ -40,11 +40,6 @@ function App() {
       <br/>
 
       <TaskList tasks={tasks} updateTask={updateTask}/>
-
-      <br/>
-      <button onClick={onAddNumber}>Test</button>
-      <br/>
-      {number}
     </div>
   );
 }

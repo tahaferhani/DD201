@@ -1,0 +1,74 @@
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+input {
+  margin-right: 10px;
+}
+
+table {
+  margin-top: 20px;
+}
+
+input[type=checkbox]:not(.switch) {
+  position: relative;
+  width: 20px;
+  height: 20px;
+  appearance: none;
+  border: 2px solid #000;
+  border-radius: 3px;
+}
+
+input[type=checkbox]:not(.switch)::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 8px;
+  height: 4px;
+  transform: translate(-50%, -70%) rotate(-45deg);
+  border: 2px solid #fff;
+  border-top: none;
+  border-right: none;
+  display: none;
+}
+
+input[type=checkbox]:not(.switch):checked {
+  background-color: #000;
+}
+
+input[type=checkbox]:not(.switch):checked::before {
+  display: block;
+}
+
+input[type=checkbox].switch {
+  position: relative;
+  width: 50px;
+  height: 25px;
+  appearance: none;
+  border-radius: 25px;
+  background-color: #cccccc;
+  transition: background-color .5s;
+}
+
+input[type=checkbox].switch::before {
+  content: "";
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 19px;
+  height: 19px;
+  background-color: #fff;
+  border-radius: 50%;
+  transition: left .5s;
+}
+
+input[type=checkbox].switch:checked {
+  background-color: #1d90fd;
+}
+
+input[type=checkbox].switch:checked::before {
+  left: 28px;
+}
