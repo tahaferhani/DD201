@@ -16,7 +16,8 @@ export default () => {
     //     })
     // }, [])
 
-    //const filteredImgs = data.filter((img) => img.category == category);
+    
+    const result = category ? data.filter(img => img.category == category) : data;
 
     return <div>
         <select onChange={e => setCategory(e.target.value)}>
@@ -27,7 +28,7 @@ export default () => {
 
         <ul>
             {
-                data.filter((img) => img.category == category).map((img) => {
+                result.map((img) => {
                     return <li key={img.id}>
                         <span>{img.Category}</span>
                         <img width={100} src={img.url}/>
