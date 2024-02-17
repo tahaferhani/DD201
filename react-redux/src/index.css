@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+body {
+    font-family: Inter;
+    padding: 20px;
+}
+
+.app {
+    display: flex;
+}
+
+.product-list {
+    display: flex;
+    flex-wrap: wrap;
+    flex: 1;
+    margin-right: 10px;
+    margin-left: -10px;
+}
+
+.product-item {
+    width: 25%;
+    margin: 0 10px;
+    text-align: center;
+    flex: 1 1 25%;
+    margin-bottom: 20px;
+}
+
+.cart .product-item {
+    width: auto;
+}
+
+.product-item img {
+    width: 100%;
+    height: 100px;
+    object-fit: cover;
+}
+
+.product-item .title {
+    margin: 6px 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.product-item button {
+    display: block;
+    margin: 6px auto 0;
+}
+
+.cart {
+    width: 250px;
+    height: calc(100vh - 40px);
+    padding: 20px 10px;
+    background-color: #DDD;
+    overflow: auto;
+}
