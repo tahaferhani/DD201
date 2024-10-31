@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Weather App</title>
+</head>
+
+<body>
+    <select id="cities">
+        <option value="48.856613,2.352222">Paris</option>
+        <option value="31.230391,121.473701">Shanghai</option>
+        <option value="40.741895,-73.989308">New York</option>
+        <option value="30.4205162,-9.5838532">Agadir</option>
+    </select>
+    <button id="my-position">My position</button>
+
+    <ul>
+        <li>
+            City: <b id="city">---</b>
+        </li>
+        <li>
+            Temperature: <b id="temp">---</b>
+        </li>
+    </ul>
+
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+    <script>
+        async function getWeatherData(coords) {
+            const url = `https://api.open-meteo.com/v1/forecast?latitude=${coords[0]}&longitude=${coords[1]}&current=temperature_2m,is_day,rain,cloud_cover,wind_speed_10m&daily=temperature_2m_max,temperature_2m_min,rain_sum&timezone=auto`;
+            
+            // let data = await fetch(url);
+            // data = await data.json();
+
+            let resp = await axios.get(url);
+            let data = resp.data;
+            console.log(data);
+
+            $("#temp").text(`${data.current.temperature_2m} ${data.current_units.temperature_2m}`)
+        }
+
+        $("#cities").on("change", async function() {
+            let coords = $(this).val();
+            coords = coords.split(",");
+            
+            getWeatherData(coords);
+        })
+
+        $("#my-position").on("click", function() {
+            navigator.geolocation.getCurrentPosition((position) => {
+                getWeatherData([position.coords.latitude, position.coords.longitude]);
+            })
+        })
+
+    </script>
+</body>
+</html>
