@@ -7,16 +7,20 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <select id="cities">
-        <option value="48.856613,2.352222">Paris</option>
-        <option value="31.230391,121.473701">Shanghai</option>
-        <option value="40.741895,-73.989308">New York</option>
-        <option value="33.5945144,-7.6200284">Casablanca</option>
-    </select>
-
-    <h1 id="temp"></h1>
-
-    <img width="100px" id="icon" src="">
+    <div id="body-bg"></div>
+    <div id="card">
+        <div id="card-bg"></div>
+        <select id="cities">
+            <option value="1">Paris</option>
+            <option value="2">Shanghai</option>
+            <option value="3">London</option>
+            <option value="4">Casablanca</option>
+        </select>
+        <div id="infos">
+            <span id="temp">22 C°</span>
+            <img id="icon" src="/icons/sun.svg">
+        </div>
+    </div>
 
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script src="script.js"></script>

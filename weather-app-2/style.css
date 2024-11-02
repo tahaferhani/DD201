@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Figtree;
+    height: 100vh;
+    padding: 40px;
+}
+
+#body-bg {
+    position: absolute;
+    z-index: -1;
+    top: -50px;
+    left: -50px;
+    bottom: -50px;
+    right: -50px;
+    background: url(/images/paris.jpg) no-repeat center;
+    background-size: cover;
+    filter: blur(30px);
+}
+
+#card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+#card-bg {
+    flex: 1;
+    background: url(/images/paris.jpg) no-repeat center;
+    background-size: cover;
+}
+
+#cities {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    color: #fff;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    appearance: none;
+    width: 150px;
+    font-family: inherit;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+#infos {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, .5);
+    font-size: 50px;
+    font-weight: 500;
+    color: #fff;
+    line-height: 100%;
+}
+
+#icon {
+    width: 50px;
+    margin-left: 15px;
+}
