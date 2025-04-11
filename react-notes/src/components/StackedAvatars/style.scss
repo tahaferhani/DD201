@@ -1,0 +1,60 @@
+.stacked-avatars {
+    display: flex;
+    margin-top: 15px;
+    
+    .avatar {
+        position: relative;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background-color: #000;
+        color: #fff;
+        font-size: 12px;
+        font-weight: bold;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 3px solid $note-color;
+        cursor: pointer;
+
+        &:hover {
+            .fullname {
+                opacity: 1;
+                visibility: visible;
+            }
+        }
+        
+        &:not(:first-child) {
+            margin-left: -10px;
+        }
+
+        &.dark {
+            border-color: $note-color-dark;
+        }
+
+        .fullname {
+            position: absolute;
+            top: -100%;
+            left: 50%;
+            transform: translate(-50%, -12px);
+            background-color: inherit;
+            white-space: nowrap;
+            padding: 10px;
+            border-radius: 10px;
+            opacity: 0;
+            visibility: hidden;
+            transition: all .3s;
+
+            &::after {
+                content: "";
+                position: absolute;
+                bottom: 0;
+                left: 50%;
+                width: 9px;
+                height: 9px;
+                transform: translate(-50%, 50%) rotate(45deg);
+                background-color: inherit;
+            }
+        }
+    }
+}

@@ -1,0 +1,66 @@
+@keyframes fadeIn {
+    100% {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+#login {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    color: #fffd;
+    text-align: center;
+
+    form {
+        width: 100%;
+        max-width: 400px;
+        padding: 50px 40px;
+        border-radius: 6px;
+        background-color: darken($body-color, 5%);
+        opacity: 0;
+        transform: translateY(40px);
+        animation: fadeIn 1s forwards;
+
+        .title,
+        .subtitle {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeIn .6s forwards;
+        }
+
+        .title {
+            font-size: 50px;
+            animation-delay: .2s;
+        }
+
+        .subtitle {
+            font-size: 20px;
+            font-weight: normal;
+            margin-bottom: 40px;
+            animation-delay: .4s;
+        }
+
+        input {
+            outline: none;
+            border: none;
+            padding: 14px;
+            font-family: inherit;
+            font-size: 16px;
+            border-radius: 6px;
+            border: 1px solid #fff2;
+            background: none;
+            display: block;
+            width: 100%;
+            margin-bottom: 15px;
+            color: #fffd;
+        }
+
+        .btn {
+            width: 100%;
+            margin-top: 20px;
+        }
+    }
+}

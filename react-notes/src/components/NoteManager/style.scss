@@ -1,0 +1,51 @@
+#note-manager {
+    position: fixed;
+    z-index: 99;
+    top: 0;
+    right: 0;
+    width: 400px;
+    height: 100%;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    background-color: darken($body-color, 5%);
+    box-shadow: 0 0 60px rgba(#000, .3);
+    color: #fffd;
+    transform: translateX(100%);
+    transition: transform .3s;
+    
+    &.visible {
+        transform: none;
+    }
+
+    .title {
+        font-size: 40px;
+        line-height: 1.2;
+        outline: none;
+        margin-bottom: 20px;
+    }
+
+    hr {
+        border: none;
+        border-bottom: 1px solid #fff2;
+        margin: 30px 0;
+    }
+
+    .content {
+        flex: 1;
+        font-size: 18px;
+
+        .medium-editor-element {
+            outline: none;
+        }
+    }
+
+    .buttons {
+        display: flex;
+        gap: 20px;
+
+        & > * {
+            flex: 1;
+        }
+    }
+}
