@@ -14,15 +14,15 @@ export default function Login({ route }) {
     }
 
     return (
-        <ImageBackground source={require("../assets/background.jpg")} style={styles.container}>
-            <KeyboardAvoidingView style={styles.container} >
+        <KeyboardAvoidingView behavior="padding" style={{ flex: 1 }} >
+            <ImageBackground source={require("../assets/background.jpg")} style={styles.container}>
                 <TouchableOpacity onPress={() => navigation.goBack()}>
                     <MaterialCommunityIcons name="arrow-left" size={30} color="#1F41BB" />
                 </TouchableOpacity>
 
                 <View style={{ alignItems: "center" }}>
                     <Text style={styles.title}>Login here {name}</Text>
-                    <Text style={styles.subtitle}>Welcome back you’ve been m Welcome back you’ve been missed!Welcome back you’ve been missed! Welcome back you’ve been missed!issed! Welcome back you’ve been missed!</Text>
+                    <Text style={styles.subtitle}>Welcome back you’ve been missed!</Text>
                 </View>
 
                 <View>
@@ -60,8 +60,8 @@ export default function Login({ route }) {
                         </TouchableOpacity>
                     </View>
                 </View>
-            </KeyboardAvoidingView>
-        </ImageBackground>
+            </ImageBackground>
+        </KeyboardAvoidingView>
     );
 }
 
