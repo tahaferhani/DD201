@@ -16,8 +16,10 @@ const Products = () => {
     }
 
     return (
-        <SafeAreaView>
+        <SafeAreaView style={{ flex: 1 }}>
+            <Text>Test fixed item</Text>
             <FlatList
+                contentContainerStyle={{flexGrow: 1}}
                 data={products}
                 numColumns={2}
                 keyExtractor={(item) => item.id}
