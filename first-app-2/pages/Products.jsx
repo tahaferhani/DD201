@@ -1,6 +1,6 @@
 import { View, Text, SafeAreaView, Image, StyleSheet, ScrollView, FlatList } from "react-native"
 import React, { useEffect, useState } from "react"
-import Button from "../components/Button"
+import Input from "../components/Input"
 
 const Products = () => {
     const [products, setProducts] = useState([])
@@ -17,9 +17,11 @@ const Products = () => {
 
     return (
         <SafeAreaView style={{ flex: 1 }}>
-            <Text>Test fixed item</Text>
+            <View style={{ padding: 20, paddingBottom: 0 }}>
+                <Input placeholder="Search for a product" />
+            </View>
             <FlatList
-                contentContainerStyle={{flexGrow: 1}}
+                contentContainerStyle={{ flexGrow: 1 }}
                 data={products}
                 numColumns={2}
                 keyExtractor={(item) => item.id}
